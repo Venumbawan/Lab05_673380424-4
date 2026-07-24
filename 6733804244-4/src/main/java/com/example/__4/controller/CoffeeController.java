@@ -2,7 +2,6 @@ package com.example.__4.controller;
 
 import com.example.__4.model.Coffee;
 import com.example.__4.service.CoffeeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,8 +10,11 @@ import java.util.List;
 @RequestMapping("/coffees")
 public class CoffeeController {
 
-    @Autowired
-    private CoffeeService service;
+    private final CoffeeService service;
+
+    public CoffeeController(CoffeeService service) {
+        this.service = service;
+    }
 
     @GetMapping
     public List<Coffee> getAll() {
