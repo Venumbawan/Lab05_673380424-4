@@ -1,1 +1,1 @@
-# Lab05_673380424-4
+รัน mvn spring-boot:run ใน Terminal ของ VScode
